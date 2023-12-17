@@ -71,7 +71,7 @@ async function getWeather() {
             const weekItem = document.createElement("li")
             weekItem.classList.add('item')
             weekItem.innerHTML = `
-                <img src="" alt="">
+                <img src="${item.day.condition.icon}" alt="">
                 <span>${dateToDayOfWeek(item.date).slice(0, 3)}</span>
                 <h4>${item.day.avgtemp_c}°C</h4>
             `

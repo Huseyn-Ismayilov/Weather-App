@@ -152,9 +152,21 @@ body {
     display: flex;
     li {
         width: 100%;
+        max-width: 100px;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 1px 2px 4px 0px #222831;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
         &:first-child {
             background-color: white;
             color: black;
+        }
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
         }
     }
 }
