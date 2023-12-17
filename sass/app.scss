@@ -38,8 +38,10 @@ body {
     }
 }
 
-.date_continer {
-
+.weather_container {
+    .icon {
+        margin-left: -15px;
+    }
 }
 
 .weather_side {
@@ -56,9 +58,6 @@ body {
 
 .info_side {
     width: 55%;
-}
-
-.info_side {
     padding: 50px;
     padding-left: 60px;
 }
@@ -101,7 +100,7 @@ body {
 .location {
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     gap: 8px;
 }
@@ -114,6 +113,10 @@ body {
 
 .temp {
     font-size: 50px;
-    margin-bottom: 13px;
+    margin-bottom: 10px;
 }
 
+.desc {
+    font-size: 20px;
+    font-weight: 700;
+}

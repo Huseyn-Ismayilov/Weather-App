@@ -7,10 +7,18 @@ const todayInfo = document.querySelector(".today_info")
 const infoSide = document.querySelector(".info_side")
 const weekList = document.querySelector(".week_list")
 
+
+// Sehife acilanda functionun default deger ile islemesi ucun
+window.addEventListener('load', () => {
+    getWeather()
+});
+
 button.addEventListener("click", getWeather)
+
 async function getWeather() {
 
-    const url = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${city.value}&days=3`;
+    const cityName = city.value || 'Baku';
+    const url = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${cityName}&days=3`;
 
     const options = {
         method: 'GET',
@@ -23,7 +31,8 @@ async function getWeather() {
     try {
         const response = await fetch(url, options)
         const data = await response.json()
-        // Date container 
+
+        // Left side date container 
         dateContiner.innerHTML = `
             <h2 class="current_day"></h2>
             <span class="date">${data.forecast.forecastday[0].date}</span>
@@ -32,13 +41,20 @@ async function getWeather() {
                 ${data.location.name}, ${data.location.country} 
             </div>
         `
-        // today info 
+        // Left side weather container
         weatherContainer.innerHTML = `
             <div class="icon">
                 <img src="${data.current.condition.icon}" width="90" alt="">
             </div>
             <h1 class="temp">${parseInt(data.current.temp_f)} °C</h1>
             <h3 class="desc">${data.current.condition.text}</h3>
+        `
+        // today info
+        todayInfo.innerHTML = `
+            <div>
+                <span class="title"></span>
+                <span></span>
+            </div>
         `
         todayInfo
         console.log(data);
@@ -47,5 +63,4 @@ async function getWeather() {
         alert("Axtardığınız məlumat tapila bilinmədi")
     }
 }
-
 
