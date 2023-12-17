@@ -35,7 +35,7 @@ async function getWeather() {
         // today info 
         weatherContainer.innerHTML = `
             <div class="icon">
-                <img src="${data.current.condition.icon}" alt="">
+                <img src="${data.current.condition.icon}" width="90" alt="">
             </div>
             <h1 class="temp">${parseInt(data.current.temp_f)} °C</h1>
             <h3 class="desc">${data.current.condition.text}</h3>
